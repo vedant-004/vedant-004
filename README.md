@@ -51,6 +51,7 @@ Recruiters: the fastest way to evaluate my work is to use the product. Then let'
 - 🌱 I'm currently learning **Advanced Machine Learning (Deep Learning, NLP), System Design & Cloud Architecture**
 - 💬 Ask me about **Machine Learning, Full-Stack Development, Data Structures & Algorithms, Competitive Programming**
 - 📫 Reach me at **tyagivedant3846@gmail.com**
+- Or at **vedant@scentarchy.com** 😉
 - ⚡ Fun fact: **I debug faster with coffee ☕ | Knight @ LeetCode (Max 1909) | Hackathon Winner 🏆 | Pre-finalist in Amazon HackOn S-5**
 
 <h3 align="left">Connect with me:</h3>
