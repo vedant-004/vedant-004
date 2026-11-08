@@ -24,7 +24,7 @@
 - 🎲 **Blind-Buy Risk Score** — a 0–100 risk gauge on every perfume page
 - 📝 **Content engine** — 30+ long-form SEO guides, programmatic pages for 13,000+ perfumes, 199 houses, accords, notes, dupes
 
-**By the numbers:** 13,000+ perfumes · 199 perfume houses · 14,000+ indexed pages · 30+ SEO articles · full auth, transactional email, giveaways, community features — all shipped solo.
+**By the numbers:** 30,000+ perfumes · 1000 perfume houses · 20,000+ indexed pages · 30+ SEO articles · full auth, transactional email, giveaways, community features — all shipped solo.
 
 ### 🛠️ Tech stack
 
