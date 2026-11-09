@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="./assets/banner.svg" alt="Vedant Tyagi: full-stack engineer who built and runs scentarchy.com" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0b0b10,50:2a0f22,100:e11d74&text=Vedant%20Tyagi&fontColor=ffffff&fontSize=56&fontAlignY=38&desc=ML%20%C2%B7%20Data%20Science%20%C2%B7%20Shipped%20to%20production&descAlignY=60&descSize=20&animation=fadeIn" alt="Vedant Tyagi: ML and data science, shipped to production" width="100%" />
 
-<a href="https://scentarchy.com"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=F7699F&center=true&vCenter=true&width=760&lines=I+shipped+a+live+product+with+real+users;27%2C000%2B+perfumes+%C2%B7+1%2C145+houses+%C2%B7+one+codebase;AI+scent+finder+measured+at+95.8%25+precision%405;Edge-rendered+on+Cloudflare+Workers+%2B+D1;Click+the+live+demo+below+%E2%80%94+it%27s+the+proof" alt="Typing animation of highlights" /></a>
+<a href="https://scentarchy.com/finder"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=F7699F&center=true&vCenter=true&width=780&lines=I+build+ML+systems+and+ship+them+to+real+users;Ranking+quality+measured%3A+95.8%25+precision%405+(held-out+96.1%25);27%2C000%2B+records+cleaned%2C+deduplicated+and+scored;Evaluation+first%3A+every+change+has+a+before+and+after;Try+the+live+demo+below+%E2%80%94+it%27s+the+proof" alt="Typing animation of highlights" /></a>
 
 <br/>
 
@@ -14,10 +14,10 @@
 <p>
 <b><a href="#-60-second-tour">Try it</a></b> ·
 <b><a href="#-results-that-matter">Results</a></b> ·
-<b><a href="#-what-i-built">What I built</a></b> ·
-<b><a href="#-architecture">Architecture</a></b> ·
-<b><a href="#-problems-i-solved-in-production">Hard problems</a></b> ·
-<b><a href="#-tech-stack">Stack</a></b> ·
+<b><a href="#-the-ml-and-data-work">ML and data work</a></b> ·
+<b><a href="#-how-the-system-fits-together">System</a></b> ·
+<b><a href="#-problems-i-solved">Hard problems</a></b> ·
+<b><a href="#-skills">Skills</a></b> ·
 <b><a href="#-for-recruiters">Hire me</a></b>
 </p>
 
@@ -27,7 +27,9 @@
 
 ## 👋 Hi, I'm Vedant
 
-I'm a full-stack engineer with a machine-learning bent. Instead of another to-do-list project, I built **[Scentarchy](https://scentarchy.com)**: a production perfume encyclopedia, dupe finder and price guide for India, with an AI scent finder at its core. It has real data, real pages, real users, a real admin panel and a real deploy pipeline.
+I work in **machine learning and data science**, and I like models that people actually use. So I built **[Scentarchy](https://scentarchy.com)**: a live perfume encyclopedia, dupe finder and price guide for India. Its core is a ranking and recommendation system over **27,000+ perfumes**, with real data, real users, an evaluation harness and a production deployment.
+
+Most of my time goes into the parts that decide whether ML works: **messy data, feature design, ranking quality, honest evaluation and explaining results**. I also ship the whole thing, from the pipeline to the page, so a model's output reaches a user instead of staying in a notebook.
 
 > **The fastest way to judge my work is to use it.** Everything below is live and clickable. The code is private because it is a real business, and I am happy to walk through it on a call.
 
@@ -35,18 +37,17 @@ I'm a full-stack engineer with a machine-learning bent. Instead of another to-do
 
 ## 🚀 60-second tour
 
-Click through the product like a user would. Each link is a real, working page.
+Each link is a real, working page.
 
-| Try this | What you are looking at | Engineering behind it |
+| Try this | What the model or data does | Why it is interesting |
 |---|---|---|
-| **[🔮 AI Scent Finder](https://scentarchy.com/finder)** | Describe a scent in plain words, or answer a short wizard, and get ranked matches with reasons | Intent parsing, weighted note/accord scoring, offline evaluation set |
-| **[🧬 Find a Dupe](https://scentarchy.com/find-alternative)** | Pick a designer perfume and see Indian-priced alternatives | Shared-notes/accords similarity, originals ranked before clones |
-| **[🌡️ Heat Lab](https://scentarchy.com/climate)** | Which perfumes survive an Indian summer? | Explainable heat model across the whole catalogue, with a confidence level |
-| **[🎨 Accord Finder](https://scentarchy.com/accords)** | Mix accords like woody + vanilla + fresh spicy | Accord-vector matching over the catalogue |
-| **[🏆 Awards](https://scentarchy.com/awards)** | Animated awards gala with winners and categories | Fully editable from the admin panel |
-| **[🏷️ Brand portal](https://scentarchy.com/brands)** | Indian houses submit and manage their own listings | Auth, moderation queue, rights warranty, audit trail |
-| **[🔎 Search bar](https://scentarchy.com)** | Type any perfume, house or note | Ranked results, originals before dupes, lazy-loaded UI |
-| **[🎁 Giveaways](https://scentarchy.com/giveaways)** | Live giveaways with entries and countdown | Deterministic server rendering, so no hydration drift |
+| **[🔮 AI Scent Finder](https://scentarchy.com/finder)** | Turns a free-text request or a short wizard into ranked matches with reasons | Weighted note and accord scoring, intent parsing, offline evaluation |
+| **[🧬 Find a Dupe](https://scentarchy.com/find-alternative)** | Finds affordable alternatives to a designer perfume | Feature-overlap similarity, with originals ranked before clones |
+| **[🌡️ Heat Lab](https://scentarchy.com/climate)** | Scores how a perfume holds up in Indian heat and humidity | Explainable model for the whole catalogue, with a confidence level |
+| **[🎨 Accord Finder](https://scentarchy.com/accords)** | Mix accords (woody + vanilla + fresh spicy) and see matches | Accord-vector matching |
+| **[🔎 Search](https://scentarchy.com)** | Type any perfume, house or note | Ranked retrieval, originals before dupes, typo tolerance |
+| **[🏆 Awards](https://scentarchy.com/awards)** | Animated awards gala | Editable from an admin panel |
+| **[🏷️ Brand portal](https://scentarchy.com/brands)** | Indian houses submit their own listings | Data intake with moderation and an audit trail |
 
 ---
 
@@ -54,146 +55,137 @@ Click through the product like a user would. Each link is a real, working page.
 
 | | |
 |---|---|
-| **27,000+ perfumes · 1,145 houses** | Live catalogue (26,898 perfumes verified in the database), grown from about 15,100 in one verified import |
-| **11,794 perfumes added in one safe run** | 31-part import with a count check after every part, resumable and idempotent |
-| **Finder precision@5: 79.8% → 95.8%** | Free-text queries on a 110-query internal evaluation set (precision@10: 77.3% → 94.5%); guided wizard 82.1% → 97.9% at precision@5 |
-| **About 30 KB gzip less JavaScript per page** | Site-wide client-JS cut (about 250 KB less on the quiz page) |
-| **8,900+ pages indexed by Google** | Staged sitemap rollout so 11.8k new pages don't flood the crawl |
-| **One engineer, end to end** | Product, data, backend, frontend, SEO, infra, admin tooling |
+| **Finder precision@5: 79.8% → 95.8%** | 110 free-text queries on the full 26,898-perfume catalogue (precision@10: 77.3% → 94.5%); wizard on 39 scenarios: 82.1% → 97.9% |
+| **Held-out test split: 96.1% precision@5** | 41 queries kept out of weight tuning. On a separate blind set, the first run scored 92.7% before I fixed what it exposed |
+| **Hard-constraint violations: 3.0% → 0.1%** | Results that broke the user's stated constraints (price, gender, "no oud") at top 10 |
+| **Finder index memory: 66.8 MB → 17.3 MB** | A leaner representation so the model fits the serverless memory budget |
+| **Heat model: 0 default scores** | Before, 1,630 perfumes (6.1%) got a placeholder 50. Now missing data shows "no estimate" and every score carries a confidence level (86% complete, 10.5% partial) |
+| **50 of 50 sanity checks pass** | Named perfumes by family, pairwise orderings and invariants for the heat model |
+| **11,794 perfumes cleaned and added** | 31 verified parts with expected counts, 2,095 uncertain rows held for review, 141 duplicates skipped |
+| **Data-quality audit across 26,898 records** | Exact and near-duplicate detection; 20 exact-name groups and 22 looser groups found |
 
-*The finder numbers come from an offline evaluation I wrote for the project. They measure agreement with expected results on that query set, not a public benchmark.*
+*These are internal measurements. The finder labels are expert-written rules over catalogue data (price, gender, notes, accords, original or dupe), not user clicks, and missing data counts as "not relevant". The blind-set fixes were made after reading its failures, so 92.7% is the honest blind number. I report that gap on purpose.*
 
 ---
 
-## 🧩 What I built
+## 🧠 The ML and data work
 
 <details open>
-<summary><b>🤖 AI / ML features</b></summary>
+<summary><b>🔮 Ranking and recommendation (the AI Scent Finder)</b></summary>
 
-- **AI Scent Finder:** free-text ("fresh summer office scent under ₹1,500", "no oud") and a guided wizard. It parses intent, handles negations and Indian-market phrasing, weights top/heart/base notes and accord strength, and explains every match with the notes that matched. Missing data is handled explicitly so thin records don't outrank well-described perfumes.
-- **Dupe engine:** shared notes/accords similarity with live INR price savings, ranked so originals come before clones.
-- **India Heat Lab:** an explainable heat model for every perfume, based on note volatility, accord families and concentration. When data is missing it says "estimated from notes" instead of inventing precision.
-- **Blind-Buy Risk Score:** a 0–100 risk gauge per perfume.
-- **Evaluation first:** I wrote the offline test sets and scripts, then measured before and after, so improvements are numbers and not opinions.
+- **Problem framing:** a user describes a scent, a budget and a context. The system must return perfumes that satisfy hard constraints first and then rank by fit.
+- **Features:** top, heart and base notes, accord rank and strength, concentration, price, gender, original versus dupe, house.
+- **Scoring:** weighted note and accord similarity, with note-family handling and a penalty for thin records so sparse data cannot outrank well-described perfumes.
+- **Intent parsing:** handles prices that look like names ("Baccarat Rouge 540" is not a ₹540 budget), reference perfumes ("like X, but cheaper"), negation ("no oud"), brand aliases, typos ("sovage") and Hinglish vocabulary.
+- **Explainability:** every result shows the notes and accords that matched.
+- **Result:** precision@5 rose from 79.8% to 95.8%, and most of the gain came from parsing and data handling rather than weight tuning, which I measured too.
 </details>
 
 <details>
-<summary><b>🛒 Product and community</b></summary>
+<summary><b>📏 Evaluation methodology</b></summary>
 
-- Price comparison across Indian sellers, with price-led snippets for search
-- Accord finder, notes encyclopedia, occasion and weather picks, compare, quiz, wear diary
-- Weekly Scent Battles, reviews, forum, giveaways, awards with voting states
-- Accounts, notifications, price alerts, newsletter, transactional email
-- Brand self-submit portal with a moderation queue
+- A 110-query set plus a wizard set, with an **independent judge** that shares no code with the ranker
+- **Dev and held-out test splits**, plus a separate blind set, to check for overfitting
+- Per-category breakdowns to find the weak spots: Hinglish and house queries scored about 63 precision@5 before and 100 after
+- Hard-constraint violation rate tracked next to precision
+- A written note of what the numbers are *not*, so nobody over-reads them
 </details>
 
 <details>
-<summary><b>🛠️ Admin tooling</b></summary>
+<summary><b>🌡️ Explainable scoring under uncertainty (Heat Lab)</b></summary>
 
-- Full admin panel: houses, perfumes, sellers and prices, dupe mappings, reviews, reports, users, data health, giveaways, notifications
-- **Homepage admin:** show, hide, reorder and edit every homepage section; items can be manual, automatic or hybrid. Automatic sections use rules over real data, for example "new launches" only from real launch data, never faked.
-- **Awards admin:** editions, categories, nominees and winners, with draft and publish states
-- One-click cache refresh so edits show up instantly on an edge-cached site
+- A deterministic model combining accords, top/heart/base notes and concentration into "holds on skin" and "stays wearable" scores, plus dry-heat, humid-heat, monsoon and air-conditioned variants
+- **Uncertainty is part of the output:** each score has a range and a confidence level, and perfumes with no usable data say "no estimate" instead of a made-up number
+- Recovers missing concentration from names and descriptions, and down-weights accords that were themselves derived from notes
+- Validated with 50 sanity checks and family-level orderings across the whole catalogue
 </details>
 
 <details>
-<summary><b>📈 SEO and growth engineering</b></summary>
+<summary><b>🧹 Data pipeline and quality</b></summary>
 
-- Programmatic pages for perfumes, houses, notes, accords, dupes and "best X under ₹Y" money pages, with JSON-LD schema
-- Value-ordered split sitemaps and an **automatic release schedule** that feeds new pages to Google in waves
-- IndexNow submission for changed URLs, and a GitHub Action that warms the edge cache after every deploy
-- Search Console workflow: query analysis, snippet and CTR fixes, indexing requests
+- Normalised and merged a 14,030-row research dataset into the live catalogue: cleaned names, matched houses, deduplicated, and **held back 2,095 uncertain rows** instead of guessing
+- Idempotent, resumable 31-part import with a verified count after every part
+- Explicit handling of missing values (1,295 unknown concentrations, 221 missing genders, flat-only note lists) so gaps don't silently bias rankings
+- Near-duplicate detection beyond exact name matches
+- Provenance rules: no invented prices, ratings or reviews, and no unlicensed photos
 </details>
 
 <details>
-<summary><b>⚖️ Compliance and trust</b></summary>
+<summary><b>📈 Analytics and search data</b></summary>
 
-- A legal risk review covering trademark and dupe wording, copyright and takedown, privacy (DPDP), consumer law, giveaways and contests
-- Legal pages, sponsored-link labelling, price disclaimers and a clear data-provenance stance (no fabricated prices, ratings or reviews)
+- Search Console query analysis: found that traffic came from specific brand and product queries with low click-through, then reshaped snippets and pages around price and intent
+- Staged release of 11.8k new pages to search engines in waves, with a data-driven schedule
+- Value-ordered sitemaps so the most useful pages are crawled first
 </details>
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ How the system fits together
 
 ```mermaid
 flowchart LR
-  U["Visitor"] --> E["Cloudflare edge cache<br/>one HTML copy per URL"]
-  E -- "miss" --> W["Next.js 16 on Workers<br/>via OpenNext"]
-  W --> D[("D1 · SQLite + FTS5<br/>27k perfumes")]
-  W --> R[("R2 · images + page cache")]
-  W --> M["Resend · email"]
-  A["Admin panel"] -- "save + refresh epoch" --> D
-  G["GitHub Actions"] -- "deploy, warm pages, IndexNow" --> E
+  S["Raw data<br/>research files, retailer feeds,<br/>brand submissions"] --> C["Clean, match,<br/>deduplicate, hold uncertain rows"]
+  C --> F["Features<br/>notes, accords, concentration,<br/>price, house"]
+  F --> M["Scoring and ranking<br/>finder, dupes, heat model"]
+  M --> E["Offline evaluation<br/>judge, splits, blind set"]
+  E -- "iterate" --> M
+  M --> P["Production<br/>edge-cached site on Cloudflare"]
+  P --> U["Users"]
+  U -- "queries, search data" --> A["Analytics and SEO tuning"]
+  A --> C
 ```
 
-```mermaid
-sequenceDiagram
-  participant V as Visitor
-  participant C as Edge cache
-  participant W as Worker
-  participant DB as D1
-  V->>C: GET /perfume/some-scent
-  alt cached for this build and epoch
-    C-->>V: HTML in milliseconds
-  else cache miss
-    C->>W: render
-    W->>DB: bounded queries, shared in-memory budget
-    DB-->>W: rows
-    W-->>C: HTML, identical for every visitor
-    C-->>V: HTML
-  end
-```
-
-**Key decisions:**
-- **One cached HTML copy per URL**, so server markup is identical for everyone. No per-visitor or time-dependent output in server HTML.
-- **A cache epoch** stored in the database lets the admin invalidate everything after a deploy or import without a redeploy.
-- **A shared 100 MB cache budget** keeps the Worker well under its 128 MB limit as the catalogue grew from about 15k to 27k perfumes.
+**Serving stack, in short:** Next.js 16 on Cloudflare Workers, D1 (SQLite with full-text search) and R2, with one cached HTML copy per URL, a cache epoch for instant invalidation, and a shared memory budget so models and indexes fit in a 128 MB Worker.
 
 ---
 
-## 🔥 Problems I solved in production
+## 🔥 Problems I solved
 
 <details>
-<summary><b>Hydration error (React #418) that silently reset dark mode</b></summary>
+<summary><b>Rankings that looked fine but weren't</b></summary>
 
-The homepage flashed light on dark devices. Root cause: a giveaway end time without a timezone was parsed differently on the server and in the browser, so React discarded the server HTML and reset the theme. I fixed the parsing to a single UTC rule, moved the "is it live" decision to the server, and made the theme re-apply after hydration. Fix verified in a fresh browser.
+Spot-checking looked good, so I wrote an evaluation set and an independent judge. It showed specific failures: a perfume name parsed as a budget, a brand turned into a hard filter, and "no oud" returning oud. Fixing parsing and data handling, not tuning weights, moved the metric from 79.8% to 95.8%.
 </details>
 
 <details>
-<summary><b>Growing the catalogue 75% without breaking the site</b></summary>
+<summary><b>Never faking certainty</b></summary>
 
-Importing about 11.8k perfumes meant memory limits, slow listing pages and a risk of flooding Google with thin pages. I split the import into 31 verified parts with expected counts, held 2,095 questionable rows and 141 duplicates for review in CSVs, capped Worker memory with a shared cache budget, and staged the new URLs into the sitemaps in waves.
+The old heat score gave 6.1% of perfumes a default 50. I replaced it with a model that reports a range and a confidence level, and that says "no estimate" when the data isn't there.
 </details>
 
 <details>
-<summary><b>Measured, not guessed, relevance</b></summary>
+<summary><b>Growing the catalogue by 75% without poisoning it</b></summary>
 
-The scent finder was rebuilt against a 110-query evaluation set I wrote, so every change had a before and after number instead of a feeling.
+Importing about 11.8k records meant cleaning, deduplication and a risk of flooding search engines with thin pages. I split the import into 31 verified parts, held back uncertain rows, capped memory, and released the new URLs in waves.
 </details>
 
 <details>
-<summary><b>Fast pages after a 27k-row catalogue</b></summary>
+<summary><b>Making models fit a serverless budget</b></summary>
 
-Moved expensive per-render counts behind short-lived caches, cut site-wide client JavaScript, lazy-loaded the search UI and interactive sections, kept hero images eager, and added a post-deploy warm-up so the first real visitor isn't the one who pays for a cold render.
+Cut the finder's index from 66.8 MB to 17.3 MB and registered it in a shared memory budget so a 27k-item catalogue runs inside a 128 MB Worker.
+</details>
+
+<details>
+<summary><b>Production bugs I debugged end to end</b></summary>
+
+A React hydration error that silently reset dark mode, traced to a timezone-less timestamp parsed differently on server and browser, fixed with a single UTC rule and server-side decisions.
 </details>
 
 ---
 
-## 🛠️ Tech stack
+## 🧰 Skills
 
 <p>
-<img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,cloudflare,sqlite,nodejs,github,githubactions,python,docker,cpp,java" alt="Technologies" />
+<img src="https://skillicons.dev/icons?i=python,pandas,numpy,sklearn,tensorflow,pytorch,jupyter,sqlite,postgres,docker,git,github" alt="ML and data tools" />
 </p>
 
-| Layer | What I use |
+| Area | What I use |
 |---|---|
-| **Frontend** | Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, server components, accessible and reduced-motion-aware animation |
-| **Backend and data** | Cloudflare Workers via OpenNext, D1 (SQLite with FTS5 full-text search), R2, custom auth (bcrypt, sessions, tokens), Resend for email |
-| **AI / ML** | Custom accord-vector similarity, intent parsing, weighted scoring, offline evaluation harness |
-| **Infra and CI/CD** | Cloudflare edge caching, GitHub Actions (deploy warm-up, IndexNow), D1 migrations as reviewed files |
-| **SEO** | Programmatic JSON-LD, split sitemaps with release waves, IndexNow, Search Console workflow |
-| **Also** | Python, scikit-learn, TensorFlow, pandas, C++, Java, Docker, Express, MongoDB, PostgreSQL |
+| **ML and data science** | Python, pandas, NumPy, scikit-learn, TensorFlow, similarity and ranking, feature engineering, offline evaluation (precision@k, held-out and blind sets), explainable scoring |
+| **Data engineering** | Cleaning and deduplication pipelines, idempotent imports with verification, SQL (SQLite and PostgreSQL), full-text search |
+| **Shipping to production** | TypeScript, Next.js 16 (React 19), Cloudflare Workers, D1, R2, GitHub Actions, edge caching, admin tooling |
+| **Analytics and growth** | Search Console analysis, structured data, sitemap strategy, IndexNow |
+| **Fundamentals** | Data structures and algorithms, competitive programming, C++, Java |
 
 I also use AI coding agents (Claude Code) in my workflow, with measured evaluations and PR review around them.
 
@@ -217,10 +209,10 @@ I also use AI coding agents (Claude Code) in my workflow, with measured evaluati
 
 | | |
 |---|---|
-| **What I'm looking for** | Full-stack, ML-adjacent or product-engineering roles where I own features end to end |
-| **Strongest proof** | Use [scentarchy.com](https://scentarchy.com) for two minutes, then ask me about anything you clicked |
-| **I can walk you through** | Database schema, ranking and evaluation, caching and invalidation, the import pipeline, the admin panel, SEO automation |
-| **Source code** | The repository is private, since it is a real business. Code samples and a live walkthrough are available on request |
+| **Roles I'm looking for** | Machine learning engineer, applied data scientist, ML or data-heavy product engineering |
+| **Strongest proof** | Use [scentarchy.com](https://scentarchy.com/finder) for two minutes, then ask me about anything you clicked |
+| **I can walk you through** | Feature design, ranking and evaluation methodology, the data pipeline and quality checks, uncertainty handling, and how it was deployed |
+| **Source code** | The repository is private because it is a real business. Code samples and a live walkthrough are available on request |
 
 📫 **[tyagivedant3846@gmail.com](mailto:tyagivedant3846@gmail.com)** · **[vedant@scentarchy.com](mailto:vedant@scentarchy.com)** · **[LinkedIn](https://www.linkedin.com/in/vedant-tyagi-6b380325a/)** · **[Instagram](https://instagram.com/vedant_.tyagi)** · **[LeetCode](https://www.leetcode.com/vedanttyagi04)**
 
